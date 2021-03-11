@@ -6,14 +6,14 @@
 #SBATCH --mem=2GB
 #SBATCH --job-name=fourinarow
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=svo213@nyu.edu
+#SBATCH --mail-user=john.grogan@ndcn.ox.ac.uk
 #SBATCH --output=4inarow_%j.out
 
-Nplayers=3
+Nplayers=1
 player=$((${SLURM_ARRAY_TASK_ID}%$Nplayers+1))
 group=$((${SLURM_ARRAY_TASK_ID}/$Nplayers+1))
 #group=0
-direc=$HOME/fourinarow/Data/ili/splits
+direc=$HOME/fourinarow/Data/splits
 codedirec=$SCRATCH/fourinarow/Model\ code/matlab\ wrapper
 
 module purge
